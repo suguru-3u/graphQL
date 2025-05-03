@@ -1,0 +1,30 @@
+type Todo {
+    id: Int
+    title: String
+    done: Boolean
+}
+
+
+type TodoSummary {
+    count: Int
+    todos: [Todo]
+}
+
+input TodoFilterInput {
+    keyword: String
+    done: Boolean
+}
+
+type Query {
+    hello: String
+    allTodos: [Todo]
+    todoSummary: TodoSummary
+    todosByDone(done: Boolean!): [Todo]
+    filterTodos(filter: TodoFilterInput): [Todo]
+}
+
+type Mutation {
+    addTodo(title: String!, done: Boolean!): Todo
+    updateTodo(id: Int!, title: String, done: Boolean): Todo
+    deleteTodo(id: Int!): Todo
+}
