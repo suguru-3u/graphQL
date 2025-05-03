@@ -17,6 +17,7 @@ input TodoFilterInput {
 
 type Query {
     hello: String
+    helloSecond: String
     allTodos: [Todo]
     todoSummary: TodoSummary
     todosByDone(done: Boolean!): [Todo]

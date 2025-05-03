@@ -30,6 +30,7 @@ class SecurityConfig {
             .authorizeHttpRequests {
                 // 最初はすべて許可
                 it.requestMatchers("/graphiql").permitAll()
+                it.requestMatchers("/api/graphql").authenticated()
                 it.anyRequest().authenticated()
             }
             // GraphiQL 上でもログイン画面が表示されるように
