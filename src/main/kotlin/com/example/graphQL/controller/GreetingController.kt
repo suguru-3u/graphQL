@@ -6,6 +6,8 @@ import com.example.graphQL.model.TodoSummary
 import org.springframework.graphql.data.method.annotation.Argument
 import org.springframework.graphql.data.method.annotation.MutationMapping
 import org.springframework.graphql.data.method.annotation.QueryMapping
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Controller
 
 @Controller
@@ -61,6 +63,13 @@ class GreetingController {
     fun deleteTodo(@Argument id: Int): Todo? {
         val index = todos.indexOfFirst { it.id == id }
         return if (index != -1) todos.removeAt(index) else null
+    }
+
+
+    @QueryMapping
+    fun me(): String {
+        val auth = SecurityContextHolder.getContext().authentication
+        return "Hello, ${(auth.principal as? UserDetails)?.username ?: "anonymous"}"
     }
 
     @QueryMapping

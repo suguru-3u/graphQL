@@ -21,6 +21,7 @@ type Query {
     todoSummary: TodoSummary
     todosByDone(done: Boolean!): [Todo]
     filterTodos(filter: TodoFilterInput): [Todo]
+    me: String
 }
 
 type Mutation {

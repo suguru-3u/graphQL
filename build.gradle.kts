@@ -30,6 +30,10 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+	// 認証用
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
 }
 
 kotlin {
