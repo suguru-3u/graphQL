@@ -33,7 +33,6 @@ dependencies {
 
 	// 認証用
 	implementation("org.springframework.boot:spring-boot-starter-security")
-
 }
 
 kotlin {

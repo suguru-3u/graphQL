@@ -1,5 +1,5 @@
 spring:
   graphql:
-    path: /api/graphql
-    graphiql:
+    path: /api/graphql # URLを設定している
+    graphiql: # ブラウザでGraphQLをリクエストできるツールをONにしている
       enabled: true

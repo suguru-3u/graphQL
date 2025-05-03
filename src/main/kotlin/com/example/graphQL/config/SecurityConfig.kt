@@ -28,7 +28,7 @@ class SecurityConfig {
                 it.disable()
             }
             .authorizeHttpRequests {
-                // 最初はすべて許可
+                // graphiqlは許可、それ以外は認証が必要
                 it.requestMatchers("/graphiql").permitAll()
                 it.requestMatchers("/api/graphql").authenticated()
                 it.anyRequest().authenticated()
